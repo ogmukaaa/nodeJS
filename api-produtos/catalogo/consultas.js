@@ -1,4 +1,4 @@
-import Produto from "..models/Produto.js";
+import Produto from "../models/Produto.js";
 import { listarDadosCatalogo } from "../data/catalogo.js";
 
 function esperar(ms){

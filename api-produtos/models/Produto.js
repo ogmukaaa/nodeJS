@@ -1,5 +1,5 @@
 export default class Produto {
-    constructor({id, nome, preco, estoque=0, categoria}) {
+    constructor({ id, nome, preco, estoque = 0, categoria }) {
         if(!Number.isInteger(id) || id <= 0) {
             throw new TypeError('ID deve ser inteiro positivo');
         }

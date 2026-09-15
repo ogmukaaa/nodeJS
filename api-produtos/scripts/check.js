@@ -27,5 +27,5 @@ for (const arquivo of arquivos) {
     }
 }
 if (!process.exitCode) {
-    console.log(`${arquivos.length} arquivos JavaScript vereificados.`);
+    console.log(`${arquivos.length} arquivos JavaScript verificados.`);
 }

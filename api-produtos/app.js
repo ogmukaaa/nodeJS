@@ -5,8 +5,8 @@ import { formatarMoeda } from "./utils/formatarMoeda.js";
 async function executar() {
     try {
         const configuracao = carregarAmbiente(process.argv[2]);
-        const idSolicitado = carregarAmbiente(process.argv[3]);
-        if(!Number.isInteger(idSolicitado)) {
+        const idSolicitado = Number(process.argv[3] || '1');
+        if (!Number.isInteger(idSolicitado)) {
             throw new Error('Informe um identificador inteiro para o produto');
         }
         exibirDiagnostico(configuracao);
@@ -16,14 +16,14 @@ async function executar() {
         ]);
         console.log({
             produto: {
-            id:produto.id,
-            nome:produto.nome,
-            preco:produto.preco,
-            precoFormatado: formatarMoeda(produto.preco),
-            estoque: produto.estoque,
-            categoria: produto.categoria,
-            valorEmEstoque: produto.calcularValorEmEstoque(),
-            valorEmEstoqueFormatado: formatarMoeda(produto.calcularValorEmEstoque())
+                id: produto.id,
+                nome: produto.nome,
+                preco: produto.preco,
+                precoFormatado: formatarMoeda(produto.preco),
+                estoque: produto.estoque,
+                categoria: produto.categoria,
+                valorEmEstoque: produto.calcularValorEmEstoque(),
+                valorEmEstoqueFormatado: formatarMoeda(produto.calcularValorEmEstoque())
             },
             categorias
         });
